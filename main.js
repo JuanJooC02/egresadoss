@@ -1,44 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const contadores = document.querySelectorAll('.numero-contador');
-
-  const animarContador = (contador) => {
-    const objetivo = +contador.getAttribute('data-objetivo');
-    const duracion = 1800;
-    const duracionFotograma = 1000 / 60;
-    const totalFotogramas = Math.round(duracion / duracionFotograma);
-    let fotograma = 0;
-
-    const intervaloConteo = setInterval(() => {
-      fotograma++;
-      const progreso = fotograma / totalFotogramas;
-      const conteoActual = Math.round(objetivo * (1 - Math.pow(1 - progreso, 2)));
-
-      contador.innerText = conteoActual.toLocaleString();
-
-      if (fotograma === totalFotogramas) {
-        contador.innerText = objetivo.toLocaleString();
-        clearInterval(intervaloConteo);
-      }
-    }, duracionFotograma);
-  };
-
-  const observadorVisibilidad = new IntersectionObserver((entradas) => {
-    entradas.forEach(entrada => {
-      if (entrada.isIntersecting) {
-        const contador = entrada.target.querySelector('.numero-contador');
-        if (contador && !contador.classList.contains('animado')) {
-          contador.classList.add('animado');
-          animarContador(contador);
-        }
-      }
-    });
-  }, { threshold: 0.3 });
-
-  document.querySelectorAll('.tarjeta-ventaja').forEach(tarjeta => {
-    observadorVisibilidad.observe(tarjeta);
-  });
-});
-
+// SECCIÓN MAPA MUNDIAL Y COLOMBIA
 const interiorPanel = document.getElementById('interiorPanel');
 document.getElementById('botonVerColombia').addEventListener('click', () => {
   interiorPanel.classList.add('girado');
@@ -47,7 +7,6 @@ document.getElementById('botonVerMundo').addEventListener('click', () => {
   interiorPanel.classList.remove('girado');
 });
 
-// DATOS ACTUALIZADOS SEGÚN EL EXCEL "datos mapa egresados.xlsx"
 const datosEgresadosMundo = {
   "US": { nombre: "Estados Unidos", egresados: 16 },
   "CA": { nombre: "Canadá", egresados: 11 },
@@ -68,7 +27,6 @@ const datosEgresadosMundo = {
   "CL": { nombre: "Chile", egresados: 1 }
 };
 
-// DIBUJO DEL MAPA MUNDIAL
 fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
   .then(respuesta => respuesta.json())
   .then(datosMapaMundo => {
@@ -121,7 +79,6 @@ fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
       });
   });
 
-// DIBUJO DEL MAPA DE COLOMBIA
 fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-10m.json')
   .then(respuesta => respuesta.json())
   .then(datosMapaDetallado => {
@@ -192,7 +149,7 @@ fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-10m.json')
       });
   });
 
-// CARRUSELES
+// SECCIÓN DE SECTORES ECONÓMICOS
 const pistaSectores = document.getElementById('pistaCarruselSectores');
 const botonAnteriorSectores = document.getElementById('botonAnteriorSectores');
 const botonSiguienteSectores = document.getElementById('botonSiguienteSectores');
@@ -205,19 +162,5 @@ if (botonSiguienteSectores && botonAnteriorSectores) {
 
   botonAnteriorSectores.addEventListener('click', () => {
     pistaSectores.scrollBy({ left: -anchoTarjetaSector, behavior: 'smooth' });
-  });
-}
-
-const pistaTexto = document.getElementById('pistaCarruselTexto');
-const botonAnterior = document.getElementById('botonAnterior');
-const botonSiguiente = document.getElementById('botonSiguiente');
-
-if (botonSiguiente && botonAnterior) {
-  botonSiguiente.addEventListener('click', () => {
-    pistaTexto.scrollBy({ left: 300, behavior: 'smooth' });
-  });
-
-  botonAnterior.addEventListener('click', () => {
-    pistaTexto.scrollBy({ left: -300, behavior: 'smooth' });
   });
 }
