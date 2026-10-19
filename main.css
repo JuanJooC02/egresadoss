@@ -493,3 +493,79 @@
   border-color: #0e1f87;
   transform: scale(1.08);
 }
+@media screen and (max-width: 992px) {
+  .contenedor-sectores-destacados {
+    flex-direction: column;
+    padding: 24px 20px;
+    gap: 24px;
+  }
+
+  .columna-resumen-sectores {
+    width: 100%;
+    height: auto;
+    padding: 24px 20px;
+    border-radius: 20px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .descripcion-resumen-sectores {
+    margin-bottom: 16px;
+  }
+
+  .columna-contenido-sectores {
+    width: 100%;
+  }
+
+  .cabecera-sectores-destacados {
+    text-align: center;
+  }
+
+  .titulo-seccion-sectores {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contenedor-sectores-destacados {
+    padding: 16px 12px;
+    border-radius: 16px;
+  }
+
+  .tarjeta-sector-institucional {
+    width: 240px;
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+
+  .envoltorio-porcentaje-circulo {
+    width: 54px;
+    height: 54px;
+  }
+
+  .porcentaje-texto {
+    font-size: 14px;
+  }
+
+  .nombre-sector-institucional {
+    font-size: 16px;
+  }
+
+  .conteo-egresados-institucional {
+    font-size: 12px;
+  }
+
+  .descripcion-sector-institucional {
+    font-size: 11px;
+  }
+
+  .pie-navegacion-sectores {
+    margin-top: 8px;
+  }
+
+  .boton-flecha {
+    width: 34px;
+    height: 34px;
+    font-size: 12px;
+  }
+}
