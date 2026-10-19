@@ -406,7 +406,7 @@ body {
 .columna-resumen-sectores {
   position: relative;
   width: 300px;
-  height: 420px;
+  height: 380px;
   flex-shrink: 0;
   background-color: #0e1f87;
   border-radius: 28px;
@@ -416,21 +416,6 @@ body {
   justify-content: center;
   color: #ffffff;
   box-shadow: 0 8px 24px rgba(14, 31, 135, 0.25);
-}
-
-.insignia-sello-sectores {
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  background-color: #e11d48;
-  color: #ffffff;
-  font-weight: 900;
-  font-size: 16px;
-  padding: 16px 18px;
-  border-radius: 50%;
-  z-index: 10;
-  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3);
-  transform: rotate(-10deg);
 }
 
 .titulo-resumen-sectores {
@@ -572,16 +557,7 @@ body {
   font-size: 13px;
   font-weight: 700;
   color: #1e293b;
-  margin-bottom: 2px;
-}
-
-.rango-sector-institucional {
-  font-size: 11px;
-  font-weight: 800;
-  color: #e11d48;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-  letter-spacing: 0.5px;
+  margin-bottom: 12px;
 }
 
 .descripcion-sector-institucional {
