@@ -149,7 +149,7 @@ fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-10m.json')
       .attr("stroke-width", "1.5");
 
     const puntosDepartamentos = [
-      { id: "DEP_DC", nombre: "Bogotá D.C.", egresados: 501, coordenadas: [-74.0721, 4.7110], radio: 30, color: "#0e1f87" },
+      { id: "DEP_DC", nombre: "Bogotá D.C.", egresados: 503, coordenadas: [-74.0721, 4.7110], radio: 30, color: "#0e1f87" },
       { id: "DEP_CUN", nombre: "Cundinamarca", egresados: 44, coordenadas: [-74.1300, 5.0200], radio: 18, color: "#e11d48" },
       { id: "DEP_ANT", nombre: "Antioquia", egresados: 9, coordenadas: [-75.5636, 6.2518], radio: 12, color: "#16a34a" },
       { id: "DEP_ATL", nombre: "Atlántico", egresados: 4, coordenadas: [-74.7813, 10.9685], radio: 9, color: "#06b6d4" },
