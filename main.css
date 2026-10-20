@@ -1,3 +1,38 @@
+/* RESET Y ESTILOS GLOBALES DE TIPOGRAFÍA */
+@font-face {
+  font-family: 'uniempresarial';
+  src: url('Cocogoose-Pro-Semilight-Italic-trial.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #fafafa;
+  color: #1e293b;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  padding: 40px;
+  margin: 0;
+}
+
+.titulo-principal {
+  max-width: 1250px;
+  margin: 20px auto 24px auto;
+  font-size: 28px;
+  font-weight: 800;
+  color: #0e1f87;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+
 /* SECCIÓN MAPA MUNDIAL Y COLOMBIA */
 .envoltorio-giro-panel {
   max-width: 1250px;
@@ -493,6 +528,8 @@
   border-color: #0e1f87;
   transform: scale(1.08);
 }
+
+/* RESPONSIVE */
 @media screen and (max-width: 992px) {
   .contenedor-sectores-destacados {
     flex-direction: column;
@@ -524,6 +561,13 @@
   .titulo-seccion-sectores {
     font-size: 22px;
   }
+}
+
+@media screen and (max-width: 768px) {
+  body { padding: 16px; }
+  .cara-panel { flex-direction: column; position: relative; height: auto; }
+  .interior-panel { min-height: auto; }
+  .tarjeta-izquierda, .mapa-derecha { width: 100%; }
 }
 
 @media screen and (max-width: 600px) {
